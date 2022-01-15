@@ -1,0 +1,11 @@
+{
+	"apiVersion": 2,
+	"name": "flipbox-block/flipbox-block",
+	"version": "0.1.0",
+	"title": "flipbox-block",
+	"category": "design",
+	"description": "",
+	"supports": {
+		"html": false
+	}
+}

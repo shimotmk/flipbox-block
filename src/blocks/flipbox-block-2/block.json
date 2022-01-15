@@ -1,0 +1,11 @@
+{
+	"apiVersion": 2,
+	"name": "flipbox-block/flipbox-block-2",
+	"version": "0.1.0",
+	"title": "Example Plugin 2",
+	"category": "design",
+	"description": "add to Example Plugin 2",
+	"supports": {
+		"html": false
+	}
+}
