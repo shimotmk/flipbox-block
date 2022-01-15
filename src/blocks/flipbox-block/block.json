@@ -7,5 +7,8 @@
 	"description": "",
 	"supports": {
 		"html": false
-	}
+	},
+	"editorScript": "file:../../../build/flipbox-block.js",
+	"editorStyle": "file:../../../build/flipbox-block.css",
+	"style": "file:../../../build/style-flipbox-block.css"
 }

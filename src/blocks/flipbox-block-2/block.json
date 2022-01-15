@@ -7,5 +7,8 @@
 	"description": "add to Example Plugin 2",
 	"supports": {
 		"html": false
-	}
+	},
+	"editorScript": "file:../../../build/flipbox-block-2.js",
+	"editorStyle": "file:../../../build/flipbox-block-2.css",
+	"style": "file:../../../build/style-flipbox-block-2.css"
 }

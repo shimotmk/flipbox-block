@@ -12,10 +12,10 @@
  * @package           flipbox-block
  */
 
-define( 'EXAMPLE_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
-define( 'EXAMPLE_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
+define( 'FLIPBOX_BLOCK_URL', plugin_dir_url( __FILE__ ) );
+define( 'FLIPBOX_BLOCK_PATH', plugin_dir_path( __FILE__ ) );
 $example_plugin_data = get_file_data( __FILE__, array( 'version' => 'Version' ) );
-define( 'EXAMPLE_PLUGIN_VERSION', $example_plugin_data['version'] );
+define( 'FLIPBOX_VERSION', $example_plugin_data['version'] );
 
 add_action('init',
 	function () {
@@ -30,9 +30,9 @@ add_action('init',
 			 */
 			wp_register_style(
 				'flipbox-block/' . $block ,
-				EXAMPLE_PLUGIN_URL . 'build/style-' . $block . '.css',
+				FLIPBOX_BLOCK_URL . 'build/style-' . $block . '.css',
 				array(),
-				EXAMPLE_PLUGIN_VERSION
+				FLIPBOX_VERSION
 			);
 
 			/**
@@ -40,17 +40,17 @@ add_action('init',
 			 */
 			wp_register_style(
 				'flipbox-block/' . $block . '-editor-css',
-				EXAMPLE_PLUGIN_URL . 'build/' . $block . '.css',
+				FLIPBOX_BLOCK_URL . 'build/' . $block . '.css',
 				array(),
-				EXAMPLE_PLUGIN_VERSION
+				FLIPBOX_VERSION
 			);
 
-			$asset = include EXAMPLE_PLUGIN_PATH .'build/' . $block .'.asset.php';
+			$asset = include FLIPBOX_BLOCK_PATH .'build/' . $block .'.asset.php';
 			wp_register_script(
 				$block . '-script',
-				EXAMPLE_PLUGIN_URL . 'build/' . $block . '.js',
+				FLIPBOX_BLOCK_URL . 'build/' . $block . '.js',
 				$asset['dependencies'],
-				EXAMPLE_PLUGIN_VERSION
+				FLIPBOX_VERSION
 			);
 
 			/**
@@ -59,11 +59,11 @@ add_action('init',
 			wp_set_script_translations(
 				$block . '-script',
 				'flipbox-block',
-				EXAMPLE_PLUGIN_PATH . 'languages'
+				FLIPBOX_BLOCK_PATH . 'languages'
 			);
 
 			register_block_type(
-				plugin_dir_path( __FILE__ ) . 'src/blocks/' . $block . '/',
+				FLIPBOX_BLOCK_PATH . 'src/blocks/' . $block . '/',
 				array(
 					'style'         => 'flipbox-block/' . $block,
 					'editor_style'  => 'flipbox-block/' . $block . '-editor-css',
