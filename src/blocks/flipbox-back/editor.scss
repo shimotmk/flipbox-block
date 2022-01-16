@@ -1,0 +1,13 @@
+/**
+ * Editor css
+ */
+.flip-box-back {
+	border: 5px solid blue;
+}
+
+.wp-block-flipbox-block-flipbox {
+	//paddingデフォルト
+	.flip-box-back {
+		padding: 2rem;
+	}
+}

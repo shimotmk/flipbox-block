@@ -20,8 +20,9 @@ define( 'FLIPBOX_VERSION', $example_plugin_data['version'] );
 add_action('init',
 	function () {
 		$blocks = array(
-			'flipbox-block',
-			'flipbox-block-2'
+			'flipbox',
+			'flipbox-front',
+			'flipbox-back'
 		);
 
 		foreach ( $blocks as $block ) {

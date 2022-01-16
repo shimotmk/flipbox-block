@@ -1,0 +1,35 @@
+{
+	"apiVersion": 2,
+	"name": "flipbox-block/flipbox-back",
+	"version": "0.1.0",
+	"title": "flipbox-back",
+	"category": "design",
+	"description": "",
+	"parent": [ "flipbox-block/flipbox"],
+	"attributes": {
+		"transitionSpeed": {
+			"type": "string",
+			"default": "0.6"
+		}
+	},
+	"supports": {
+		"html": false,
+		"color": {
+			"background": true,
+			"gradients": true
+		},
+		"spacing": {
+			"padding": true
+		},
+		"className": true,
+		"align": [
+			"left",
+			"right",
+			"wide",
+			"full"
+		]
+	},
+	"editorScript": "file:../../../build/flipbox-back.js",
+	"editorStyle": "file:../../../build/flipbox-back.css",
+	"style": "file:../../../build/style-flipbox-back.css"
+}

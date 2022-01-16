@@ -1,0 +1,58 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.wp-block-flipbox-block-flipbox {
+	.flip-box {
+		height: 500px;
+	}
+
+	.block-editor-inner-blocks {
+		background-color: transparent;
+		perspective: 1000px;
+	}
+
+	.block-editor-block-list__layout {
+		//親要素の高さを指定するならoverflow:hiddenしたい
+		// overflow: hidden;
+		// coreのカバーブロックも同様の実装だったのでmarginは0にする
+		> *:first-child {
+			margin: 0;
+		}
+		> *:nth-child(2) {
+			margin: 0;
+		}
+		transition: transform 0.8s;
+		transform-style: preserve-3d;
+	}
+
+	/* Do an horizontal flip when you move the mouse over the flip box container */
+	// .selected-flipbox .block-editor-inner-blocks:hover .block-editor-block-list__layout {
+	.selected-flipbox:hover .block-editor-block-list__layout {
+		// ここでフリップするかどうか設定出来る
+		transform: rotateY(180deg)!important;
+	}
+
+	/* Position the front and back side */
+	.flip-box-front, .flip-box-back {
+		position: absolute!important;
+		width: 100%;
+		backface-visibility: hidden;
+		.block-editor-block-list__layout {
+			transform:none!important;
+		}
+	}
+
+	/* Style the front side */
+	.flip-box-front {
+		background-color: #E4312C;
+	}
+
+	/* Style the back side */
+	.selected-flipbox .flip-box-back {
+		background-color: #3D39C4;
+		transform: rotateY(180deg)!important;
+	}
+}
+
