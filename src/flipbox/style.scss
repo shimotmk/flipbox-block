@@ -2,10 +2,10 @@
  * Front
  */
 .flip-box-block:not(.block-editor-block-list__block) {
-  background-color: transparent;
-  height: 500px;
+	background-color: transparent;
+	height: 500px;
 	// 奥行きみたいなもの
-  perspective: 10000px;
+	perspective: 10000px;
 
 	.flip-box-block-innner {
 		position: relative;
