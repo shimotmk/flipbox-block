@@ -15,64 +15,68 @@ import { useState } from '@wordpress/element';
 
 import './editor.scss';
 
-export default function flipboxEdit(props) {
+export default function flipboxEdit( props ) {
 	const { attributes, setAttributes } = props;
-	const {
-		flipboxHeight,
-	} = attributes;
+	const { flipboxHeight } = attributes;
 
-	const ALLOWED_BLOCKS = ['flipbox-block/flipbox-front', 'flipbox-block/flipbox-back'];
-	const TEMPLATE = [['flipbox-block/flipbox-front'], ['flipbox-block/flipbox-back']];
+	const ALLOWED_BLOCKS = [
+		'flipbox-block/flipbox-front',
+		'flipbox-block/flipbox-back',
+	];
+	const TEMPLATE = [
+		[ 'flipbox-block/flipbox-front' ],
+		[ 'flipbox-block/flipbox-back' ],
+	];
 
 	// 編集画面のみで一意のidを振る
 	// 公開画面は以下のissuesがマージされてから
 	// https://github.com/WordPress/gutenberg/pull/34750
-	const instanceId = useInstanceId(flipboxEdit);
+	const instanceId = useInstanceId( flipboxEdit );
 
 	// このブロックの一番外側に高さを持たせる
 	let style;
-	if (flipboxHeight) {
+	if ( flipboxHeight ) {
 		style = { height: flipboxHeight };
 	}
-	const blockProps = useBlockProps({
-		className: `flip-box-block flip-box-block-edit-${instanceId}`,
+	const blockProps = useBlockProps( {
+		className: `flip-box-block flip-box-block-edit-${ instanceId }`,
 		style,
-	});
+	} );
 
 	// エディター用のインラインCSSを作る
 	let editorInlineStyle = '';
 	editorInlineStyle += `
-		.flip-box-block-edit-${instanceId} {
-			height: ${flipboxHeight}!important;
+		.flip-box-block-edit-${ instanceId } {
+			height: ${ flipboxHeight }!important;
 		}
 	`;
 
 	// Animationするかどうか
-	const [isAnimation, setIsAnimation] = useState('front');
-	if (isAnimation === 'back') {
+	const [ isAnimation, setIsAnimation ] = useState( 'front' );
+	if ( isAnimation === 'back' ) {
 		editorInlineStyle += `
-			.flip-box-block-edit-${instanceId} > .flip-box > .block-editor-inner-blocks > .block-editor-block-list__layout {
+			.flip-box-block-edit-${ instanceId } > .flip-box > .block-editor-inner-blocks > .block-editor-block-list__layout {
 				transition: transform 0.8s;
 				transform: rotateY(180deg);
 			}
-			.flip-box-block-edit-${instanceId} > .selected-flipbox-back .flip-box-block-front{
+			.flip-box-block-edit-${ instanceId } > .selected-flipbox-back .flip-box-block-front{
 				transform: rotateY(-180deg);
 			}
-			.flip-box-block-edit-${instanceId} > .selected-flipbox-back .flip-box-block-back{
+			.flip-box-block-edit-${ instanceId } > .selected-flipbox-back .flip-box-block-back{
 				transform: rotateY(180deg);
 			}
 		`;
-	} else if (isAnimation === 'front') {
+	} else if ( isAnimation === 'front' ) {
 		editorInlineStyle += `
-			.flip-box-block-edit-${instanceId} > .flip-box > .block-editor-inner-blocks > .block-editor-block-list__layout {
+			.flip-box-block-edit-${ instanceId } > .flip-box > .block-editor-inner-blocks > .block-editor-block-list__layout {
 				// transition: transform 0.8s;
 				// transform: rotateY(180deg);
 			}
-			.flip-box-block-edit-${instanceId} > .selected-flipbox-back .flip-box-block-front{
+			.flip-box-block-edit-${ instanceId } > .selected-flipbox-back .flip-box-block-front{
 				transform: rotateY(-180deg);
 				z-index: 20;
 			}
-			.flip-box-block-edit-${instanceId} > .selected-flipbox-back .flip-box-block-back{
+			.flip-box-block-edit-${ instanceId } > .selected-flipbox-back .flip-box-block-back{
 				transform: rotateY(180deg);
 				opacity: 0;
     		transition: 1s;
@@ -84,57 +88,63 @@ export default function flipboxEdit(props) {
 	return (
 		<div>
 			<InspectorControls>
-				<PanelBody title={__('Balloon setting', 'flipbox-block')}>
+				<PanelBody title={ __( 'Balloon setting', 'flipbox-block' ) }>
 					<ButtonGroup>
 						<Button
-							className={isAnimation === 'front' ? 'is-primary' : 'is-default'}
-							onClick={() => {
-								setIsAnimation('front');
-							}}
+							className={
+								isAnimation === 'front'
+									? 'is-primary'
+									: 'is-default'
+							}
+							onClick={ () => {
+								setIsAnimation( 'front' );
+							} }
 						>
 							Front
 						</Button>
 						<Button
-							className={isAnimation === 'back' ? 'is-primary' : 'is-default'}
-							onClick={() => {
-								setIsAnimation('back');
-							}}
+							className={
+								isAnimation === 'back'
+									? 'is-primary'
+									: 'is-default'
+							}
+							onClick={ () => {
+								setIsAnimation( 'back' );
+							} }
 						>
 							Back
 						</Button>
 					</ButtonGroup>
 					<UnitControl
-						label={__('Height', 'flipbox-block')}
+						label={ __( 'Height', 'flipbox-block' ) }
 						labelPosition="edge"
-						value={flipboxHeight}
+						value={ flipboxHeight }
 						__unstableInputWidth="80px"
-						onChange={(value) => {
-							setAttributes({ flipboxHeight: value });
-						}}
+						onChange={ ( value ) => {
+							setAttributes( { flipboxHeight: value } );
+						} }
 					/>
 				</PanelBody>
 			</InspectorControls>
-			<style>
-				{editorInlineStyle}
-			</style>
-			<div {...blockProps}>
+			<style>{ editorInlineStyle }</style>
+			<div { ...blockProps }>
 				<div
 					id="getRectBtn"
 					className={
 						isAnimation === 'front'
-						? 'flip-box selected-flipbox-front'
-						: 'flip-box selected-flipbox-back'
+							? 'flip-box selected-flipbox-front'
+							: 'flip-box selected-flipbox-back'
 					}
-					style={{
+					style={ {
 						height: flipboxHeight,
-					}}
-					>
+					} }
+				>
 					<InnerBlocks
-						style={{
+						style={ {
 							height: flipboxHeight,
-						}}
-						allowedBlocks={ALLOWED_BLOCKS}
-						template={TEMPLATE}
+						} }
+						allowedBlocks={ ALLOWED_BLOCKS }
+						template={ TEMPLATE }
 						templateLock="all"
 					/>
 				</div>
