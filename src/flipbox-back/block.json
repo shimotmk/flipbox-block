@@ -1,0 +1,29 @@
+{
+	"apiVersion": 2,
+	"name": "flipbox-block/flipbox-back",
+	"version": "0.1.0",
+	"title": "flipbox-back",
+	"category": "design",
+	"description": "",
+	"parent": [ "flipbox-block/flipbox"],
+	"attributes": {
+		"transitionSpeed": {
+			"type": "string",
+			"default": "0.6"
+		},
+		"contentPosition": {
+			"type": "string"
+		},
+		"lock": {
+    	"remove": true,
+    	"move": true
+		}
+	},
+	"supports": {
+		"reusable": false,
+		"html": false,
+		"className": true
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css"
+}

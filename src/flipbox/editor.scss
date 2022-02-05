@@ -1,0 +1,46 @@
+/**
+ * editor only.
+ */
+.flip-box-block {
+	// 編集画面のエリア識別用
+	outline: 2px solid #ccc;
+	> .flip-box {
+	// １つ目のインナーブロック
+		> .block-editor-inner-blocks {
+			// flip-box-block-frontとflip-box-block-backをを囲んでいるdiv要素
+			> .block-editor-block-list__layout {
+				position: relative;
+				background-color: transparent;
+				// perspective: 1000px;
+				// transition: transform 0.8s;
+				// transform-style: preserve-3d;
+				> *:first-child {
+					margin: 0;
+				}
+				> *:nth-child(2) {
+					margin: 0;
+				}
+
+				.selected-flipbox-front:hover {
+					.block-editor-block-list__layout {
+						// ここでフリップするかどうか設定出来る
+						// transform: rotateY(180deg)!important;
+					}
+				}
+
+				/* Position指定 */
+				.flip-box-block-front {
+					position: absolute;
+					width: 100%;
+					min-height: 74px;
+				}
+
+				.flip-box-block-back {
+					position: absolute;
+					width: 100%;
+					min-height: 74px;
+				}
+			}
+		}
+	}
+}

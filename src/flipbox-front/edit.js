@@ -1,12 +1,20 @@
 import { __ } from '@wordpress/i18n';
-import { InnerBlocks, useBlockProps, InspectorControls } from '@wordpress/block-editor';
+import {
+	InnerBlocks,
+	useBlockProps,
+} from '@wordpress/block-editor';
 import { select } from '@wordpress/data';
 import './editor.scss';
 
 export default function Edit(props) {
+	const { attributes, setAttributes, clientId } = props;
+
+	// インナーブロックの外側の要素を指定
 	const blockProps = useBlockProps({
-		className: 'flip-box-back',
+		className: 'flip-box-block-front',
 	});
+
+	// 許可するブロックをflipbox-blockのみにする
 	const getBlockTypes = select('core/blocks').getBlockTypes();
 	const AllBlockName = getBlockTypes.map((blockType) => (
 		blockType.name
@@ -14,9 +22,13 @@ export default function Edit(props) {
 	const ALLOWED_BLOCKS = AllBlockName.filter(item => !item.match(/flipbox-block/));
 
 	return (
-		<div {...blockProps}>
-			<InnerBlocks
-				allowedBlocks={ALLOWED_BLOCKS} />
-		</div>
+		<>
+			<div {...blockProps}>
+				<InnerBlocks
+					// allowedBlocks={ALLOWED_BLOCKS}
+					templateLock={false}
+				/>
+			</div>
+		</>
 	);
 }

@@ -1,0 +1,71 @@
+{
+	"apiVersion": 2,
+	"name": "flipbox-block/flipbox",
+	"version": "0.1.0",
+	"title": "flipbox",
+	"category": "design",
+	"description": "",
+	"attributes": {
+		"editFlipbox": {
+			"type": "string",
+			"default": "front"
+		},
+		"selectedFlipbox": {
+			"type": "boolean",
+			"default": false
+		},
+		"flipboxType": {
+			"type": "string",
+			"default": "flip-left"
+		},
+		"flipboxWidth": {
+			"type": "string",
+			"default": "100%"
+		},
+		"flipboxHeight": {
+			"type": "string",
+			"default": "500px"
+		},
+		"transitionSpeed": {
+			"type": "string",
+			"default": "0.6"
+		}
+	},
+	"supports": {
+		"html": false,
+		"reusable": false,
+		"className": true
+	},
+	"example": {
+		"attributes": {
+			"flipboxHeight": "500px"
+		},
+		"innerBlocks": [
+			{
+				"name": "flipbox-block/flipbox-front",
+				"innerBlocks": [
+					{
+						"name": "core/image",
+						"attributes": {
+							"content": "In a village of La Mancha, the name of which I have no desire to call to mind, there lived not long since one of those gentlemen that keep a lance in the lance-rack, an old buckler, a lean hack, and a greyhound for coursing."
+						}
+					}
+				]
+			},
+			{
+				"name": "flipbox-block/flipbox-back",
+				"innerBlocks": [
+					{
+						"name": "core/image",
+						"attributes": {
+							"content": "In a village of La Mancha, the name of which I have no desire to call to mind, there lived not long since one of those gentlemen that keep a lance in the lance-rack, an old buckler, a lean hack, and a greyhound for coursing."
+						}
+					}
+				]
+			}
+		]
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

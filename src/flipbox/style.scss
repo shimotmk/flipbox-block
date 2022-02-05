@@ -1,0 +1,41 @@
+/**
+ * Front
+ */
+.flip-box-block:not(.block-editor-block-list__block) {
+  background-color: transparent;
+  height: 500px;
+	// 奥行きみたいなもの
+  perspective: 10000px;
+
+	.flip-box-block-innner {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		transition: transform;
+		transition-duration: 1s;
+		transform-style: preserve-3d;
+	}
+
+	&:hover {
+		> .flip-box-block-innner {
+			transform: rotateY(180deg);
+		}
+	}
+
+	.flip-box-block-front,
+	.flip-box-block-back {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		// 後ろの要素は非表示にする
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+	}
+
+	.flip-box-block-front {
+	}
+
+	.flip-box-block-back{
+		transform: rotateY(180deg);
+	}
+}
