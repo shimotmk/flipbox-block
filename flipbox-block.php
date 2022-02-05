@@ -14,6 +14,8 @@
  * @package           flipbox-block
  */
 
+defined( 'ABSPATH' ) || exit;
+
 add_action('init',
 	function () {
 		$blocks = array(

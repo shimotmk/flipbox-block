@@ -7,7 +7,9 @@ export default function save({ attributes }) {
 
 	let style;
 	if (flipboxHeight) {
-		style = { height: flipboxHeight };
+		style = {
+			height: flipboxHeight
+		};
 	}
 
 	const blockProps = useBlockProps.save({

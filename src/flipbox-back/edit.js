@@ -6,12 +6,7 @@ import {
 import { select } from '@wordpress/data';
 import './editor.scss';
 
-export default function FlepboxBackEdit(props) {
-	const { attributes, setAttributes, clientId } = props;
-	const {
-		contentPosition
-	} = attributes;
-
+export default function FlepboxBackEdit() {
 	const blockProps = useBlockProps({
 		className: 'flip-box-block-back',
 	});

@@ -2,19 +2,10 @@
 	"apiVersion": 2,
 	"name": "flipbox-block/flipbox-front",
 	"version": "0.1.0",
-	"title": "flipbox-front",
+	"title": "Flip Box Front",
 	"category": "design",
 	"description": "",
 	"parent": [ "flipbox-block/flipbox" ],
-	"attributes": {
-		"inheritedFlipboxHeight": {
-			"type": "string",
-			"default": "500px"
-		},
-		"contentPosition": {
-			"type": "string"
-		}
-	},
 	"supports": {
 		"reusable": false,
 		"html": false,

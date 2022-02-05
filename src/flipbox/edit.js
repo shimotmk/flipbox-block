@@ -6,30 +6,27 @@ import {
 } from '@wordpress/block-editor';
 import {
 	PanelBody,
-	ToggleControl,
 	__experimentalUnitControl as UnitControl,
 	Button,
 	ButtonGroup,
 } from '@wordpress/components';
 import { useInstanceId } from '@wordpress/compose';
+import { useState } from '@wordpress/element';
 
 import './editor.scss';
 
 export default function flipboxEdit(props) {
-	const { attributes, setAttributes, clientId, toggleSelection } = props;
+	const { attributes, setAttributes } = props;
 	const {
-		editFlipbox,
-		flipboxType,
-		selectedFlipbox,
-		flipboxWidth,
 		flipboxHeight,
-		transitionSpeed
 	} = attributes;
 
 	const ALLOWED_BLOCKS = ['flipbox-block/flipbox-front', 'flipbox-block/flipbox-back'];
 	const TEMPLATE = [['flipbox-block/flipbox-front'], ['flipbox-block/flipbox-back']];
 
 	// 編集画面のみで一意のidを振る
+	// 公開画面は以下のissuesがマージされてから
+	// https://github.com/WordPress/gutenberg/pull/34750
 	const instanceId = useInstanceId(flipboxEdit);
 
 	// このブロックの一番外側に高さを持たせる
@@ -50,51 +47,69 @@ export default function flipboxEdit(props) {
 		}
 	`;
 
+	// Animationするかどうか
+	const [isAnimation, setIsAnimation] = useState('front');
+	if (isAnimation === 'back') {
+		editorInlineStyle += `
+			.flip-box-block-edit-${instanceId} > .flip-box > .block-editor-inner-blocks > .block-editor-block-list__layout {
+				transition: transform 0.8s;
+				transform: rotateY(180deg);
+			}
+			.flip-box-block-edit-${instanceId} > .selected-flipbox-back .flip-box-block-front{
+				transform: rotateY(-180deg);
+			}
+			.flip-box-block-edit-${instanceId} > .selected-flipbox-back .flip-box-block-back{
+				transform: rotateY(180deg);
+			}
+		`;
+	} else if (isAnimation === 'front') {
+		editorInlineStyle += `
+			.flip-box-block-edit-${instanceId} > .flip-box > .block-editor-inner-blocks > .block-editor-block-list__layout {
+				// transition: transform 0.8s;
+				// transform: rotateY(180deg);
+			}
+			.flip-box-block-edit-${instanceId} > .selected-flipbox-back .flip-box-block-front{
+				transform: rotateY(-180deg);
+				z-index: 20;
+			}
+			.flip-box-block-edit-${instanceId} > .selected-flipbox-back .flip-box-block-back{
+				transform: rotateY(180deg);
+				opacity: 0;
+    		transition: 1s;
+				z-index: 10;
+			}
+		`;
+	}
+
 	return (
 		<div>
 			<InspectorControls>
 				<PanelBody title={__('Balloon setting', 'flipbox-block')}>
 					<ButtonGroup>
 						<Button
-							className={editFlipbox === 'front' ? 'is-primary' : 'is-default'}
-							onClick={() =>
-								setAttributes({ editFlipbox: 'front' })
-							}
+							className={isAnimation === 'front' ? 'is-primary' : 'is-default'}
+							onClick={() => {
+								setIsAnimation('front');
+							}}
 						>
 							Front
 						</Button>
 						<Button
-							className={editFlipbox === 'back' ? 'is-primary' : 'is-default'}
-							onClick={() =>
-								setAttributes({ editFlipbox: 'back' })
-							}
+							className={isAnimation === 'back' ? 'is-primary' : 'is-default'}
+							onClick={() => {
+								setIsAnimation('back');
+							}}
 						>
 							Back
 						</Button>
 					</ButtonGroup>
-					<ToggleControl
-						label={__('Stop Animation', 'flipbox-block')}
-						checked={selectedFlipbox}
-						onChange={(checked) =>
-							setAttributes({ selectedFlipbox: checked })
-						}
-					/>
 					<UnitControl
-						label={__('Height')}
+						label={__('Height', 'flipbox-block')}
 						labelPosition="edge"
 						value={flipboxHeight}
 						__unstableInputWidth="80px"
 						onChange={(value) => {
 							setAttributes({ flipboxHeight: value });
-						}}
-					/>
-					<UnitControl
-						label={__('Width')}
-						labelPosition="edge"
-						value={flipboxWidth}
-						__unstableInputWidth="80px"
-						onChange={(value) => {
-							setAttributes({ flipboxWidth: value });
 						}}
 					/>
 				</PanelBody>
@@ -104,8 +119,9 @@ export default function flipboxEdit(props) {
 			</style>
 			<div {...blockProps}>
 				<div
+					id="getRectBtn"
 					className={
-						editFlipbox === 'front'
+						isAnimation === 'front'
 						? 'flip-box selected-flipbox-front'
 						: 'flip-box selected-flipbox-back'
 					}

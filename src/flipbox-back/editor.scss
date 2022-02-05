@@ -16,9 +16,10 @@
 		}
 	}
 
+	// 編集しているブロックのラベル
 	&:before {
 		position: absolute;
-    right: 0;
+    left: 0;
     top: 0;
     font-size: 10px;
     background: #eee;

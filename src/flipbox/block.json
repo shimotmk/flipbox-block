@@ -2,7 +2,7 @@
 	"apiVersion": 2,
 	"name": "flipbox-block/flipbox",
 	"version": "0.1.0",
-	"title": "flipbox",
+	"title": "Flip Box",
 	"category": "design",
 	"description": "",
 	"attributes": {
@@ -10,25 +10,9 @@
 			"type": "string",
 			"default": "front"
 		},
-		"selectedFlipbox": {
-			"type": "boolean",
-			"default": false
-		},
-		"flipboxType": {
-			"type": "string",
-			"default": "flip-left"
-		},
-		"flipboxWidth": {
-			"type": "string",
-			"default": "100%"
-		},
 		"flipboxHeight": {
 			"type": "string",
 			"default": "500px"
-		},
-		"transitionSpeed": {
-			"type": "string",
-			"default": "0.6"
 		}
 	},
 	"supports": {

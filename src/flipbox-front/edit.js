@@ -6,15 +6,13 @@ import {
 import { select } from '@wordpress/data';
 import './editor.scss';
 
-export default function Edit(props) {
-	const { attributes, setAttributes, clientId } = props;
-
+export default function Edit() {
 	// インナーブロックの外側の要素を指定
 	const blockProps = useBlockProps({
 		className: 'flip-box-block-front',
 	});
 
-	// 許可するブロックをflipbox-blockのみにする
+	// 許可するブロックをflipbox-blockは除く
 	const getBlockTypes = select('core/blocks').getBlockTypes();
 	const AllBlockName = getBlockTypes.map((blockType) => (
 		blockType.name
@@ -25,7 +23,7 @@ export default function Edit(props) {
 		<>
 			<div {...blockProps}>
 				<InnerBlocks
-					// allowedBlocks={ALLOWED_BLOCKS}
+					allowedBlocks={ALLOWED_BLOCKS}
 					templateLock={false}
 				/>
 			</div>
