@@ -22,7 +22,7 @@
 	},
 	"example": {
 		"attributes": {
-			"flipboxHeight": "500px"
+			"flipboxHeight": "200px"
 		},
 		"innerBlocks": [
 			{
@@ -31,7 +31,7 @@
 					{
 						"name": "core/image",
 						"attributes": {
-							"content": "In a village of La Mancha, the name of which I have no desire to call to mind, there lived not long since one of those gentlemen that keep a lance in the lance-rack, an old buckler, a lean hack, and a greyhound for coursing."
+							"url": "https://ps.w.org/flip-box-block/assets/banner-772x250.jpg"
 						}
 					}
 				]
@@ -42,7 +42,7 @@
 					{
 						"name": "core/image",
 						"attributes": {
-							"content": "In a village of La Mancha, the name of which I have no desire to call to mind, there lived not long since one of those gentlemen that keep a lance in the lance-rack, an old buckler, a lean hack, and a greyhound for coursing."
+							"url": "https://ps.w.org/flip-box-block/assets/banner-772x250.jpg"
 						}
 					}
 				]
