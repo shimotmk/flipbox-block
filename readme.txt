@@ -20,6 +20,9 @@ https://github.com/shimotmk/flipbox-block
 
 == Changelog ==
 
+= 0.1.3 =
+* update icon,description,example,uri
+
 = 0.1.2 =
 * Deploy action
 
