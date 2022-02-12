@@ -24,7 +24,7 @@ https://github.com/shimotmk/flipbox-block
 
 == Changelog ==
 
-= 0.1.3 =
+= 0.1.4 =
 * update description
 
 = 0.1.3 =
