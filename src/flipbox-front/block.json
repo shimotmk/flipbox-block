@@ -3,8 +3,8 @@
 	"name": "flipbox-block/flipbox-front",
 	"version": "0.1.0",
 	"title": "Flip Box Front",
+	"description": "This is the block that appears on the front.",
 	"category": "design",
-	"description": "",
 	"parent": [ "flipbox-block/flipbox" ],
 	"supports": {
 		"reusable": false,
