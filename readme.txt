@@ -25,6 +25,7 @@ https://github.com/shimotmk/flipbox-block
 == Changelog ==
 
 * update Panel title
+* update dist file
 
 = 0.1.4 =
 * update description
