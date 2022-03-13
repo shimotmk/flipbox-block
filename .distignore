@@ -6,5 +6,8 @@
 /.editorconfig
 /.eslintrc
 /.wp-env.json
+/.wp-env.override.json
+/.gitignore
+/.distignore
 package.json
 package-lock.json
