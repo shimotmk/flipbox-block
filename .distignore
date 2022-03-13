@@ -9,5 +9,6 @@
 /.wp-env.override.json
 /.gitignore
 /.distignore
+README.md
 package.json
 package-lock.json
