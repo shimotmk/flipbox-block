@@ -1,0 +1,40 @@
+name: 🐛 Bug report
+description: Report a bug with Flip Box Block plugin
+body:
+    - type: textarea
+      attributes:
+          label: Description
+          description: Please write a brief description of the bug, including what you expect to happen and what is currently happening.
+          placeholder: |
+              Feature '...' is not working properly. I expect '...' to happen, but '...' happens instead
+      validations:
+          required: true
+
+    - type: textarea
+      attributes:
+          label: Step-by-step reproduction instructions
+          description: Please write the steps needed to reproduce the bug.
+          placeholder: |
+              1. Go to '...'
+              2. Click on '...'
+              3. Scroll down to '...'
+      validations:
+          required: true
+
+    - type: textarea
+      attributes:
+          label: Screenshots, screen recording, code snippet
+      validations:
+          required: false
+
+    - type: textarea
+      attributes:
+          label: Environment info
+          description: |
+              Please list what plugin version you are using.
+          placeholder: |
+            - WordPress version, plugin version, and active Theme you are using.
+            - Browser(s) are you seeing the problem on.
+            - Device you are using and operating system (e.g. "Desktop with Windows 10", "iPhone with iOS 14", etc.).
+      validations:
+          required: false
