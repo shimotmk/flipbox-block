@@ -27,9 +27,6 @@ jobs:
     - name: Npm install
       run: npm install
 
-    - name: Composer install
-      run: composer install
-
     - name: Npm build
       run: npm run build
 
