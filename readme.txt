@@ -24,6 +24,9 @@ https://github.com/shimotmk/flipbox-block
 
 == Changelog ==
 
+= 0.1.7 =
+* Release action
+
 = 0.1.6 =
 * update Stable tag
 
