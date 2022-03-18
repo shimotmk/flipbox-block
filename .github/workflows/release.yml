@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0 # git describeするために履歴を取得
 
     # get the node version from the .node-version file
     - name: Read .node-version
@@ -33,11 +35,6 @@ jobs:
 
     - name: Plugin zip
       run: npm run plugin-zip
-
-    steps:
-    - uses: actions/checkout@v2
-      with:
-        fetch-depth: 0 # git describeするために履歴を取得
 
     # チェンジログをlerna-changelogで生成する
     - name: Create Changelog
