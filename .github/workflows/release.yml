@@ -36,7 +36,7 @@ jobs:
     # チェンジログをlerna-changelogで生成する
     - name: Create Changelog
       env:
-        GITHUB_AUTH: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_AUTH: ${{ secrets.ACCESS_GITHUB_TOKEN }}
       run: |
         # Get PrevTag From git
         PREV_TAG=$(git describe –abbrev=0)
