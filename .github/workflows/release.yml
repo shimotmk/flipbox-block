@@ -18,8 +18,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.event.pull_request.title }}
+          tag_name: ${{ github.event.pull_request.title }} #v0.1.〇〇
           release_name: ${{ github.event.pull_request.title }}
           body: ${{ github.event.pull_request.body }}
           draft: false
           prerelease: false
+        - run: |
+           echo "${{ github.event.pull_request.title }}" > TAG_NAME
+           git tag ${{ github.event.pull_request.title }}
+           git push origin ${{ github.event.pull_request.title }}
