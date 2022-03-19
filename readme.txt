@@ -24,7 +24,7 @@ https://github.com/shimotmk/flipbox-block
 
 == Changelog ==
 
-= 0.1.7 - 0.1.12 =
+= 0.1.7 - 0.1.13 =
 * Release action
 * Deploy action
 
