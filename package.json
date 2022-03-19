@@ -16,5 +16,20 @@
 	"devDependencies": {
 		"@wordpress/scripts": "^20.0.2",
 		"lerna-changelog": "^2.2.0"
+	},
+	"changelog": {
+		"labels": {
+			"Type: Breaking": "💥 Breaking Change",
+			"Type: Feature": "🎉 New Feature",
+			"Type: Enhancement": "🚀 Enhancement",
+			"Type: BugFix": "🐛 Bug Fix",
+			"Type: Documentation": "📝 Documentation",
+			"Type: Code Quality": "♻️ Code Quality",
+			"Type: Tools": "🛠️ Tools"
+		}
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/shimotmk/flipbox-block.git"
 	}
 }
