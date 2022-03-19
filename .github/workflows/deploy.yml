@@ -1,6 +1,6 @@
 name: Deploy to WordPress.org
 on:
-  created:
+  create:
     tags:
     - "*"
 jobs:
