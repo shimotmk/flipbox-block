@@ -21,7 +21,9 @@ jobs:
           body: ${{ github.event.pull_request.body }}
           draft: false
           prerelease: false
-        - run: |
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - run: |
            echo "${{ github.event.pull_request.title }}" > TAG_NAME
            git tag ${{ github.event.pull_request.title }}
            git push origin ${{ github.event.pull_request.title }}
