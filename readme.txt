@@ -3,8 +3,8 @@ Contributors: shimotomoki
 Donate link: https://www.amazon.jp/hz/wishlist/ls/2N2XNHHUW2GXP?ref_=wl_share
 Tags: gutenberg,block,FlipBox,
 Requires at least: 5.9
-Tested up to: 5.9.2
-Stable tag: 0.1.6
+Tested up to: 6.0
+Stable tag: 0.1.18
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -23,6 +23,9 @@ https://github.com/shimotmk/flipbox-block
 == Frequently Asked Questions ==
 
 == Changelog ==
+
+= 0.1.18 =
+* Tested up version
 
 = 0.1.7 - 0.1.17 =
 * Release action
