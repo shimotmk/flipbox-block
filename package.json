@@ -5,15 +5,15 @@
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
 	"scripts": {
-		"build": "wp-scripts build",
+		"build": "wp-scripts build --webpack-copy-php",
 		"format": "wp-scripts format",
 		"lint:css": "wp-scripts lint-style",
 		"lint:js": "wp-scripts lint-js",
-		"start": "wp-scripts start",
+		"start": "wp-scripts start --webpack-copy-php",
 		"plugin-zip": "wp-scripts plugin-zip",
 		"packages-update": "wp-scripts packages-update"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^20.0.2"
+		"@wordpress/scripts": "^24.2.0"
 	}
 }
