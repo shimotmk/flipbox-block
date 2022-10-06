@@ -1,3 +1,6 @@
+/**
+ * WordPress dependencies
+ */
 import { __ } from '@wordpress/i18n';
 import {
 	InnerBlocks,
@@ -11,12 +14,15 @@ import {
 	ButtonGroup,
 } from '@wordpress/components';
 import { useInstanceId } from '@wordpress/compose';
-import { useState } from '@wordpress/element';
+import { useState, useEffect } from '@wordpress/element';
 
+/**
+ * Internal dependencies
+ */
 import './editor.scss';
 
 export default function flipboxEdit( props ) {
-	const { attributes, setAttributes } = props;
+	const { attributes, setAttributes, clientId } = props;
 	const { flipboxHeight } = attributes;
 
 	const ALLOWED_BLOCKS = [
@@ -28,19 +34,16 @@ export default function flipboxEdit( props ) {
 		[ 'flipbox-block/flipbox-back' ],
 	];
 
+	useEffect( () => {
+		// deprecatedがあったら変えていく
+		setAttributes( { flipboxVersion: '1.0.0' } );
+	}, [clientId] );
+
 	// 編集画面のみで一意のidを振る
-	// 公開画面は以下のissuesがマージされてから
-	// https://github.com/WordPress/gutenberg/pull/34750
 	const instanceId = useInstanceId( flipboxEdit );
 
-	// このブロックの一番外側に高さを持たせる
-	let style;
-	if ( flipboxHeight ) {
-		style = { height: flipboxHeight };
-	}
 	const blockProps = useBlockProps( {
 		className: `flip-box-block flip-box-block-edit-${ instanceId }`,
-		style,
 	} );
 
 	// エディター用のインラインCSSを作る

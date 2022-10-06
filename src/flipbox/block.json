@@ -13,6 +13,9 @@
 		"flipboxHeight": {
 			"type": "string",
 			"default": "500px"
+		},
+		"flipboxVersion": {
+			"type": "string"
 		}
 	},
 	"supports": {
@@ -50,6 +53,5 @@
 		]
 	},
 	"editorScript": "file:./index.js",
-	"editorStyle": "file:./index.css",
-	"style": "file:./style-index.css"
+	"editorStyle": "file:./index.css"
 }

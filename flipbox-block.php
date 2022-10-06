@@ -18,17 +18,6 @@
 
 defined( 'ABSPATH' ) || exit;
 
-add_action('init',
-	function () {
-		$blocks = array(
-			'flipbox',
-			'flipbox-front',
-			'flipbox-back'
-		);
-		foreach ( $blocks as $block ) {
-			register_block_type(
-				plugin_dir_path( __FILE__ ) . 'build/' . $block . '/',
-			);
-		}
-	}
-);
+define( 'FLIP_BOX_BLOCK_DIR_PATH', plugin_dir_path( __FILE__ ) );
+
+require_once __DIR__ . '/lib/load.php';
