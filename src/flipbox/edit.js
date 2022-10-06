@@ -1,3 +1,6 @@
+/**
+ * WordPress dependencies
+ */
 import { __ } from '@wordpress/i18n';
 import {
 	InnerBlocks,
@@ -13,6 +16,9 @@ import {
 import { useInstanceId } from '@wordpress/compose';
 import { useState } from '@wordpress/element';
 
+/**
+ * Internal dependencies
+ */
 import './editor.scss';
 
 export default function flipboxEdit( props ) {
@@ -88,7 +94,9 @@ export default function flipboxEdit( props ) {
 	return (
 		<div>
 			<InspectorControls>
-				<PanelBody title={ __( 'Flip Box Block setting', 'flipbox-block' ) }>
+				<PanelBody
+					title={ __( 'Flip Box Block setting', 'flipbox-block' ) }
+				>
 					<ButtonGroup>
 						<Button
 							className={
