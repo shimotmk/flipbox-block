@@ -1,6 +1,12 @@
-import { __ } from '@wordpress/i18n';
+/**
+ * WordPress dependencies
+ */
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { select } from '@wordpress/data';
+
+/**
+ * Internal dependencies
+ */
 import './editor.scss';
 
 export default function Edit() {

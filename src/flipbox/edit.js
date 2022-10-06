@@ -91,7 +91,9 @@ export default function flipboxEdit( props ) {
 	return (
 		<div>
 			<InspectorControls>
-				<PanelBody title={ __( 'Flip Box Block setting', 'flipbox-block' ) }>
+				<PanelBody
+					title={ __( 'Flip Box Block setting', 'flipbox-block' ) }
+				>
 					<ButtonGroup>
 						<Button
 							className={

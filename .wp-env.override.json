@@ -1,8 +1,6 @@
 {
 	"core": null,
-	"plugins": [
-		"."
-	],
+	"plugins": [ "." ],
 	"port": 1244,
 	"env": {
 		"tests": {
