@@ -14,42 +14,42 @@ import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 const blockAttributes = {
 	editFlipbox: {
 		type: 'string',
-		default: 'front'
+		default: 'front',
 	},
 	flipboxHeight: {
-			type: 'string',
-			default: '500px'
+		type: 'string',
+		default: '500px',
 	},
 };
 
- const deprecated = [
-	 {
-		 attributes: {
+const deprecated = [
+	{
+		attributes: {
 			...blockAttributes,
-		 },
-		 save( { attributes } ) {
-				const { flipboxHeight } = attributes;
+		},
+		save( { attributes } ) {
+			const { flipboxHeight } = attributes;
 
-				let style;
-				if ( flipboxHeight ) {
-					style = {
-						height: flipboxHeight,
-					};
-				}
+			let style;
+			if ( flipboxHeight ) {
+				style = {
+					height: flipboxHeight,
+				};
+			}
 
-				const blockProps = useBlockProps.save( {
-					className: `flip-box-block`,
-					style,
-				} );
-			 return (
+			const blockProps = useBlockProps.save( {
+				className: `flip-box-block`,
+				style,
+			} );
+			return (
 				<div { ...blockProps }>
 					<div className="flip-box-block-innner">
 						<InnerBlocks.Content />
 					</div>
 				</div>
-			 );
-		 },
-	 },
- ];
+			);
+		},
+	},
+];
 
- export default deprecated;
+export default deprecated;

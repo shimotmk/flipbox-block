@@ -37,7 +37,7 @@ export default function flipboxEdit( props ) {
 	useEffect( () => {
 		// deprecatedがあったら変えていく
 		setAttributes( { flipboxVersion: '1.0.0' } );
-	}, [clientId] );
+	}, [ clientId ] );
 
 	// 編集画面のみで一意のidを振る
 	const instanceId = useInstanceId( flipboxEdit );
