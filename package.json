@@ -15,7 +15,7 @@
 		"prepare": "husky install"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^20.0.2",
+		"@wordpress/scripts": "^24.3.0",
 		"husky": "^8.0.1"
 	}
 }
