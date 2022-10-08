@@ -19,5 +19,6 @@
 defined( 'ABSPATH' ) || exit;
 
 define( 'FLIP_BOX_BLOCK_DIR_PATH', plugin_dir_path( __FILE__ ) );
+define( 'FLIP_BOX_BLOCK_DIR_URL', plugin_dir_url( __FILE__ ) );
 
 require_once __DIR__ . '/lib/load.php';

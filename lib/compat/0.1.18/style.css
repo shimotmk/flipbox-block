@@ -1,0 +1,27 @@
+.flip-box-block:not(.block-editor-block-list__block) {
+	background-color: transparent;
+	height: 500px;
+	perspective: 10000px;
+}
+.flip-box-block:not(.block-editor-block-list__block) .flip-box-block-innner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	transition: transform;
+	transition-duration: 1s;
+	transform-style: preserve-3d;
+}
+.flip-box-block:not(.block-editor-block-list__block):hover > .flip-box-block-innner {
+	transform: rotateY(180deg);
+}
+.flip-box-block:not(.block-editor-block-list__block) .flip-box-block-front,
+.flip-box-block:not(.block-editor-block-list__block) .flip-box-block-back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+.flip-box-block:not(.block-editor-block-list__block) .flip-box-block-back {
+	transform: rotateY(180deg);
+}
