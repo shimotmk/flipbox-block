@@ -11,9 +11,11 @@
 		"lint:js": "wp-scripts lint-js",
 		"start": "wp-scripts start",
 		"plugin-zip": "wp-scripts plugin-zip",
-		"packages-update": "wp-scripts packages-update"
+		"packages-update": "wp-scripts packages-update",
+		"prepare": "husky install"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^20.0.2"
+		"@wordpress/scripts": "^20.0.2",
+		"husky": "^8.0.1"
 	}
 }
