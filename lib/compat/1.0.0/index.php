@@ -58,8 +58,7 @@ function flip_box_block_get_style_v1_0_0( $selector, $attributes ) {
 			),
 		),
 		array(
-			// 'selector'     => $selector . ' .flip-box-block-innner',
-			'selector'     => '.flip-box-block .flip-box-block-innner',
+			'selector'     => $selector . ' .flip-box-block-innner',
 			'declarations' => array(
 				'position'            => 'relative',
 				'width'               => '100%',
@@ -70,15 +69,13 @@ function flip_box_block_get_style_v1_0_0( $selector, $attributes ) {
 			),
 		),
 		array(
-			// 'selector'     => $selector . ' .flip-box-block:hover > .flip-box-block-innner',
-			'selector'     => '.flip-box-block:hover > .flip-box-block-innner',
+			'selector'     => $selector . ':hover > .flip-box-block-innner',
 			'declarations' => array(
 				'transform' => 'rotateY(180deg)',
 			),
 		),
 		array(
-			// 'selector'     => $selector . ' .flip-box-block-front,' . $selector . ' .flip-box-block-back',
-			'selector'     => '.flip-box-block .flip-box-block-front,.flip-box-block .flip-box-block-back',
+			'selector'     => $selector . ' .flip-box-block-front,' . $selector . ' .flip-box-block-back',
 			'declarations' => array(
 				'position'=> 'absolute',
 				'width'=> '100%',
@@ -88,8 +85,7 @@ function flip_box_block_get_style_v1_0_0( $selector, $attributes ) {
 			),
 		),
 		array(
-			// 'selector'     => $selector . ' .flip-box-block-back',
-			'selector'     => '.flip-box-block .flip-box-block-back',
+			'selector'     => $selector . ' .flip-box-block-back',
 			'declarations' => array(
 				'transform' => 'rotateY(180deg)',
 			),
