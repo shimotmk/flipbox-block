@@ -22,7 +22,7 @@ import { useState, useEffect } from '@wordpress/element';
 import './editor.scss';
 
 export default function flipboxEdit( props ) {
-	const { attributes, setAttributes, clientId } = props;
+	const { attributes, setAttributes } = props;
 	const { flipboxHeight } = attributes;
 
 	const ALLOWED_BLOCKS = [
@@ -37,7 +37,7 @@ export default function flipboxEdit( props ) {
 	useEffect( () => {
 		// deprecatedがあったら変えていく
 		setAttributes( { flipboxVersion: '1.0.0' } );
-	}, [ clientId ] );
+	}, [] );
 
 	// 編集画面のみで一意のidを振る
 	const instanceId = useInstanceId( flipboxEdit );
