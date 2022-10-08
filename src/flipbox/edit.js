@@ -55,6 +55,8 @@ export default function flipboxEdit( props ) {
 	`;
 
 	// Animationするかどうか
+	// 編集画面も公開画面となるべくcssを合わせるためにlayoutと同じようにフッターにスタイルを固めたいがunstableなものが多いので一旦ステイ
+	// https://github.com/WordPress/gutenberg/blob/trunk/packages/block-editor/src/hooks/layout.js#L406-L414
 	const [ isAnimation, setIsAnimation ] = useState( 'front' );
 	if ( isAnimation === 'back' ) {
 		editorInlineStyle += `
