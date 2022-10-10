@@ -20,6 +20,7 @@ import { useState } from '@wordpress/element';
  * Internal dependencies
  */
 import './editor.scss';
+import InlineStyles from './inline-styles';
 
 export default function flipboxEdit( props ) {
 	const { attributes, setAttributes } = props;
@@ -147,6 +148,10 @@ export default function flipboxEdit( props ) {
 						height: flipboxHeight,
 					} }
 				>
+					<InlineStyles
+						flipboxHeight={ flipboxHeight }
+						instanceId={ instanceId }
+					/>
 					<InnerBlocks
 						style={ {
 							height: flipboxHeight,
