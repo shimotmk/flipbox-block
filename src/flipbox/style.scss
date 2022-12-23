@@ -30,6 +30,7 @@
 		// 後ろの要素は非表示にする
 		-webkit-backface-visibility: hidden;
 		backface-visibility: hidden;
+		transform: rotateX(0deg);
 	}
 
 	.flip-box-block-front {
