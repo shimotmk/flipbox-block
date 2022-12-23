@@ -24,6 +24,9 @@ https://github.com/shimotmk/flipbox-block
 
 == Changelog ==
 
+= 0.1.20-Beta =
+* Fix Firefox Back Problem
+
 = 0.1.19 =
 * Tested up version
 
