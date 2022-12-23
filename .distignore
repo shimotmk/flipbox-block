@@ -1,6 +1,7 @@
 /.wordpress-org
 /.git
 /.github
+.husky/
 /node_modules
 /src
 /.editorconfig
