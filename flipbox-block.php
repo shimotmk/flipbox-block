@@ -31,7 +31,8 @@ add_action('init',
 			);
 			wp_set_script_translations(
 				'flipbox-block-'. $block . '-editor-script-js',
-				'flipbox-block'
+				'flipbox-block',
+				plugin_dir_path( __FILE__ ) . 'languages'
 			);
 		}
 	}
