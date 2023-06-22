@@ -5,6 +5,7 @@
 	"title": "Flip Box Front",
 	"description": "The block that appears in the front.",
 	"category": "design",
+	"textdomain": "flipbox-block",
 	"parent": [ "flipbox-block/flipbox" ],
 	"supports": {
 		"reusable": false,
