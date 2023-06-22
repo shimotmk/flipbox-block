@@ -30,7 +30,7 @@ add_action('init',
 				plugin_dir_path( __FILE__ ) . 'build/' . $block . '/',
 			);
 			wp_set_script_translations(
-				'flipbox-block-'. $block, '-editor-script-js',
+				'flipbox-block-'. $block . '-editor-script-js',
 				'flipbox-block'
 			);
 		}
