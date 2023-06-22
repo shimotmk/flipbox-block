@@ -24,6 +24,9 @@ https://github.com/shimotmk/flipbox-block
 
 == Changelog ==
 
+= 0.1.22 =
+* Fix translation
+
 = 0.1.21 =
 * Tested up version
 
