@@ -29,7 +29,7 @@ add_action('init',
 			register_block_type(
 				plugin_dir_path( __FILE__ ) . 'build/' . $block . '/',
 			);
-			wp_set_script_translations( 'flipbox-block' . $block . '-editor-script-js', 'flipbox-block', plugin_dir_path( __FILE__ ) . 'languages' );
+			wp_set_script_translations( 'flipbox-block-' . $block . '-editor-script-js', 'flipbox-block', plugin_dir_path( __FILE__ ) . 'languages' );
 		}
 	}
 );
