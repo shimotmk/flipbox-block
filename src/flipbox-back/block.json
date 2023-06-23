@@ -1,7 +1,6 @@
 {
 	"apiVersion": 2,
 	"name": "flipbox-block/flipbox-back",
-	"version": "0.1.0",
 	"title": "Flip Box Back",
 	"description": "The block that appears in the back.",
 	"category": "design",

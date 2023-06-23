@@ -5,8 +5,8 @@
  * Description:       Flip Box Block is a block plugin for the WordPress block editor that allows you to freely place blocks in front and behind.
  * Requires at least: 6.1
  * Requires PHP:      7.2
- * Version:           0.1.35
- * Stable tag:        0.1.35
+ * Version:           0.1.36
+ * Stable tag:        0.1.36
  * Author:            Tomoki Shimomura
  * Author URI:        https://flip-box-block.shimomuratomoki.com/
  * License:           GPL-2.0-or-later

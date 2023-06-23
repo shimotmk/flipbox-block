@@ -1,7 +1,6 @@
 {
 	"apiVersion": 2,
 	"name": "flipbox-block/flipbox",
-	"version": "0.1.0",
 	"title": "Flip Box",
 	"category": "design",
 	"textdomain": "flip-box-block",
