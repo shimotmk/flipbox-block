@@ -5,13 +5,13 @@
  * Description:       Flip Box Block is a block plugin for the WordPress block editor that allows you to freely place blocks in front and behind.
  * Requires at least: 6.1
  * Requires PHP:      7.2
- * Version:           0.1.34
- * Stable tag:        0.1.34
+ * Version:           0.1.35
+ * Stable tag:        0.1.35
  * Author:            Tomoki Shimomura
  * Author URI:        https://flip-box-block.shimomuratomoki.com/
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       flipbox-block
+ * Text Domain:       flip-box-block
  *
  * @package           flipbox-block
  */
@@ -20,7 +20,7 @@ defined( 'ABSPATH' ) || exit;
 
 add_action('init',
 	function () {
-		load_plugin_textdomain( 'flipbox-block' );
+		load_plugin_textdomain( 'flip-box-block' );
 		$blocks = array(
 			'flipbox',
 			'flipbox-front',
@@ -32,7 +32,7 @@ add_action('init',
 			);
 			wp_set_script_translations(
 				'flipbox-block-'. $block . '-editor-script-js',
-				'flipbox-block'
+				'flip-box-block'
 			);
 		}
 	}

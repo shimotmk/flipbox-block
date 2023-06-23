@@ -4,7 +4,7 @@
 	"version": "0.1.0",
 	"title": "Flip Box",
 	"category": "design",
-	"textdomain": "flipbox-block",
+	"textdomain": "flip-box-block",
 	"description": "Flip Box is a block that allows you to freely place blocks back and forth.",
 	"attributes": {
 		"editFlipbox": {

@@ -95,7 +95,7 @@ export default function flipboxEdit( props ) {
 		<div>
 			<InspectorControls>
 				<PanelBody
-					title={ __( 'Flip Box Block setting', 'flipbox-block' ) }
+					title={ __( 'Flip Box Block setting', 'flip-box-block' ) }
 				>
 					<ButtonGroup>
 						<Button
@@ -124,7 +124,7 @@ export default function flipboxEdit( props ) {
 						</Button>
 					</ButtonGroup>
 					<UnitControl
-						label={ __( 'Height', 'flipbox-block' ) }
+						label={ __( 'Height', 'flip-box-block' ) }
 						labelPosition="edge"
 						value={ flipboxHeight }
 						__unstableInputWidth="80px"

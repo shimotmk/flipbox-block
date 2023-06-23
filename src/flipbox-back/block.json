@@ -5,7 +5,7 @@
 	"title": "Flip Box Back",
 	"description": "The block that appears in the back.",
 	"category": "design",
-	"textdomain": "flipbox-block",
+	"textdomain": "flip-box-block",
 	"parent": [ "flipbox-block/flipbox" ],
 	"supports": {
 		"reusable": false,
