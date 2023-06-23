@@ -20,7 +20,7 @@ defined( 'ABSPATH' ) || exit;
 
 add_action('init',
 	function () {
-		load_plugin_textdomain( 'flipbox-block', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+		load_plugin_textdomain( 'flipbox-block' );
 		$blocks = array(
 			'flipbox',
 			'flipbox-front',
@@ -32,8 +32,7 @@ add_action('init',
 			);
 			wp_set_script_translations(
 				'flipbox-block-'. $block . '-editor-script-js',
-				'flipbox-block',
-				dirname( plugin_basename( __FILE__ ) ) . '/languages'
+				'flipbox-block'
 			);
 		}
 	}
