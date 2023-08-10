@@ -1,5 +1,5 @@
 {
-	"apiVersion": 2,
+	"apiVersion": 3,
 	"name": "flipbox-block/flipbox-back",
 	"title": "Flip Box Back",
 	"description": "The block that appears in the back.",
