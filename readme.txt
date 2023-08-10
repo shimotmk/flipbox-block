@@ -2,10 +2,10 @@
 Contributors: shimotomoki
 Donate link: https://www.amazon.jp/hz/wishlist/ls/2N2XNHHUW2GXP?ref_=wl_share
 Tags: gutenberg,block,FlipBox,
-Requires at least: 6.1
-Tested up to: 6.2
-Stable tag: 0.1.37
-Requires PHP: 7.0
+Requires at least: 6.2
+Tested up to: 6.3
+Stable tag: 0.2.0
+Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,12 +17,16 @@ Flip Box Block is a block plugin for the WordPress block editor that allows you 
 
 https://www.youtube.com/watch?v=4tb2vQKirt0
 
-The source code of this plug-in is below.
-https://github.com/shimotmk/flipbox-block
+[The source code of this plugin is below.](https://github.com/shimotmk/flipbox-block)
 
 == Frequently Asked Questions ==
 
 == Changelog ==
+
+= 0.2.0 =
+* Tested up version
+* Fix CanInsertBlockType
+* Update block.json apiVersion 3
 
 = 0.1.37 =
 * Fix translation
