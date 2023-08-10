@@ -6,12 +6,16 @@ import { flipBoxIcon } from './icon.js';
 import json from './block.json';
 import edit from './edit';
 import save from './save';
+import './hooks.js';
 
 const { name, ...settings } = json;
 
 registerBlockType( name, {
 	title: __( 'Flip Box', 'flip-box-block' ),
-	description: __( 'Flip Box is a block that allows you to freely place blocks back and forth.', 'flip-box-block' ),
+	description: __(
+		'Flip Box is a block that allows you to freely place blocks back and forth.',
+		'flip-box-block'
+	),
 	icon: flipBoxIcon,
 	...settings,
 	edit,
