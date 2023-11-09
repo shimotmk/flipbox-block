@@ -9,7 +9,9 @@
 	"supports": {
 		"reusable": false,
 		"html": false,
-		"className": true
+		"layout": {
+			"allowEditing": false
+		}
 	},
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css"
