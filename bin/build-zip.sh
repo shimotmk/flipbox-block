@@ -10,7 +10,7 @@ rm -rf "$BUILD_PATH"
 mkdir -p "$DEST_PATH"
 
 echo "Installing PHP and JS dependencies..."
-pnpm install
+npm install
 
 echo "Running JS Build..."
 if [ -z "${NODE_ENV}" ]; then
