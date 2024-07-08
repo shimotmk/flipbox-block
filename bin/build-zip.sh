@@ -16,6 +16,7 @@ fi
 echo "Cleaning up PHP dependencies..."
 npm install
 npm run build
+npm run plugin-zip
 echo "Syncing files..."
 rsync -rc --exclude-from="$PROJECT_PATH/.distignore" "$PROJECT_PATH/" "$DEST_PATH/" --delete --delete-excluded
 

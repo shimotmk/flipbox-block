@@ -28,7 +28,10 @@ jobs:
                   CURRENT_VERSION="$CURRENT_VERSION-$VERSUFFIX"
 
                   cd "$GITHUB_WORKSPACE"
-                  bash bin/build-zip.sh
+                  # bash bin/build-zip.sh
+									npm install
+									npm run build
+									npm run plugin-zip
 
                   mkdir "$GITHUB_WORKSPACE/zips"
                   mkdir -p "$GITHUB_WORKSPACE/unzips"
