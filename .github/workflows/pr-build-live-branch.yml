@@ -27,15 +27,15 @@ jobs:
 
                   CURRENT_VERSION="$CURRENT_VERSION-$VERSUFFIX"
 
-                  cd "$GITHUB_WORKSPACE/flipbox-block"
+                  cd "$GITHUB_WORKSPACE"
                   bash bin/build-zip.sh
 
                   mkdir "$GITHUB_WORKSPACE/zips"
-                  mkdir -p "$GITHUB_WORKSPACE/unzips/flipbox-block"
-                  mv "$GITHUB_WORKSPACE/flipbox-block/flipbox-block.zip" "$GITHUB_WORKSPACE/zips/flipbox-block.zip"
+                  mkdir -p "$GITHUB_WORKSPACE/unzips"
+                  mv "$GITHUB_WORKSPACE/flipbox-block.zip" "$GITHUB_WORKSPACE/zips/flipbox-block.zip"
                   cd "$GITHUB_WORKSPACE/zips"
                   unzip -qq flipbox-block.zip
-                  cp -r flipbox-block "$GITHUB_WORKSPACE/unzips/flipbox-block/flipbox-block"
+                  cp -r flipbox-block "$GITHUB_WORKSPACE/unzips/flipbox-block"
                   rm flipbox-block.zip
                   mv flipbox-block flipbox-block-dev
                   zip -q -r -9 "flipbox-block-dev.zip" "flipbox-block-dev/"
