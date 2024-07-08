@@ -27,9 +27,6 @@ jobs:
 
                   CURRENT_VERSION="$CURRENT_VERSION-$VERSUFFIX"
 
-                  sed -i -e 's/Version: .*$/Version: '"$CURRENT_VERSION"'/' "$GITHUB_WORKSPACE/flipbox-block.php"
-                  echo "$CURRENT_VERSION" > "$GITHUB_WORKSPACE/version.txt"
-
                   cd "$GITHUB_WORKSPACE/flipbox-block"
                   bash bin/build-zip.sh
 
