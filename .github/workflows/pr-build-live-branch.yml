@@ -2,11 +2,6 @@ name: Build Live Branch
 on:
   pull_request:
 
-concurrency:
-    # Cancel concurrent jobs on pull_request but not push, by including the run_id in the concurrency group for the latter.
-    group: build-${{ github.event_name == 'push' && github.run_id || 'pr' }}-${{ github.ref }}
-    cancel-in-progress: true
-
 permissions: {}
 
 jobs:
