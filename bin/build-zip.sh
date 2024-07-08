@@ -9,15 +9,13 @@ echo "Generating build directory..."
 rm -rf "$BUILD_PATH"
 mkdir -p "$DEST_PATH"
 
-echo "Installing PHP and JS dependencies..."
-npm install
-
 echo "Running JS Build..."
 if [ -z "${NODE_ENV}" ]; then
 	export NODE_ENV=production
 fi
 echo "Cleaning up PHP dependencies..."
 npm install
+npm run build
 npm run plugin-zip
 echo "Syncing files..."
 rsync -rc --exclude-from="$PROJECT_PATH/.distignore" "$PROJECT_PATH/" "$DEST_PATH/" --delete --delete-excluded
