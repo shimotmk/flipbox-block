@@ -4,7 +4,7 @@ Donate link: https://www.amazon.jp/hz/wishlist/ls/2N2XNHHUW2GXP?ref_=wl_share
 Tags: gutenberg,block,FlipBox,
 Requires at least: 6.5
 Tested up to: 6.6
-Stable tag: 0.5.1
+Stable tag: 0.5.2
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -22,6 +22,9 @@ https://www.youtube.com/watch?v=4tb2vQKirt0
 == Frequently Asked Questions ==
 
 == Changelog ==
+
+= 0.5.2 =
+* Fix folder
 
 = 0.5.1 =
 * Add Previews and Blueprints

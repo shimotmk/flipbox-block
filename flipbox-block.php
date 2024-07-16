@@ -6,7 +6,7 @@
  * Requires at least: 6.5
  * Requires PHP:      7.2
  * Version:           0.5.0
- * Stable tag:        0.5.1
+ * Stable tag:        0.5.2
  * Author:            Tomoki Shimomura
  * Author URI:        https://flip-box-block.shimomuratomoki.com/
  * License:           GPL-2.0-or-later
