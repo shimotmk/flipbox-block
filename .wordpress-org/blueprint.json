@@ -38,7 +38,7 @@
 			"step": "importWxr",
 			"file": {
 				"resource": "url",
-				"url": "https://raw.githubusercontent.com/ndiego/flip-box-block/main/_playground/demo-content.xml"
+				"url": "https://raw.githubusercontent.com/shimotmk/flipbox-block/main/.wordpress-org/demo-content.xml"
 			}
 		}
 	]
