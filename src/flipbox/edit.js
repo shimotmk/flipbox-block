@@ -6,14 +6,15 @@ import {
 	InnerBlocks,
 	useBlockProps,
 	InspectorControls,
+	HeightControl,
 } from '@wordpress/block-editor';
 import {
-	PanelBody,
-	__experimentalUnitControl as UnitControl,
-	Button,
-	ButtonGroup,
+	__experimentalToolsPanel as ToolsPanel, // eslint-disable-line
+	__experimentalToolsPanelItem as ToolsPanelItem, // eslint-disable-line
+	__experimentalToggleGroupControl as ToggleGroupControl, // eslint-disable-line
+	__experimentalToggleGroupControlOption as ToggleGroupControlOption, // eslint-disable-line
 } from '@wordpress/components';
-import { useInstanceId } from '@wordpress/compose';
+import { useInstanceId, useViewportMatch } from '@wordpress/compose';
 import { useState } from '@wordpress/element';
 
 /**
@@ -21,9 +22,23 @@ import { useState } from '@wordpress/element';
  */
 import './editor.scss';
 
-export default function flipboxEdit( props ) {
+function useToolsPanelDropdownMenuProps() {
+	const isMobile = useViewportMatch( 'medium', '<' );
+	return ! isMobile
+		? {
+				popoverProps: {
+					placement: 'left-start',
+					// For non-mobile, inner sidebar width (248px) - button width (24px) - border (1px) + padding (16px) + spacing (20px)
+					offset: 259,
+				},
+		  }
+		: {};
+}
+
+export default function FlipBoxEdit( props ) {
 	const { attributes, setAttributes } = props;
 	const { flipboxHeight } = attributes;
+	const dropdownMenuProps = useToolsPanelDropdownMenuProps();
 
 	const ALLOWED_BLOCKS = [
 		'flipbox-block/flipbox-front',
@@ -37,7 +52,7 @@ export default function flipboxEdit( props ) {
 	// 編集画面のみで一意のidを振る
 	// 公開画面は以下のissuesがマージされてから
 	// https://github.com/WordPress/gutenberg/pull/34750
-	const instanceId = useInstanceId( flipboxEdit );
+	const instanceId = useInstanceId( FlipBoxEdit );
 
 	// このブロックの一番外側に高さを持たせる
 	let style;
@@ -92,47 +107,52 @@ export default function flipboxEdit( props ) {
 	}
 
 	return (
-		<div>
+		<>
 			<InspectorControls>
-				<PanelBody
-					title={ __( 'Flip Box Block setting', 'flip-box-block' ) }
+				<ToolsPanel
+					label={ __( 'Settings' ) }
+					resetAll={ () =>
+						setAttributes( { flipboxHeight: '500px' } )
+					}
+					dropdownMenuProps={ dropdownMenuProps }
 				>
-					<ButtonGroup>
-						<Button
-							className={
-								isAnimation === 'front'
-									? 'is-primary'
-									: 'is-default'
-							}
-							onClick={ () => {
-								setIsAnimation( 'front' );
+					<ToolsPanelItem
+						label={ __( 'Height' ) }
+						isShownByDefault
+						hasValue={ () => flipboxHeight !== '500px' }
+						onDeselect={ () =>
+							setAttributes( { flipboxHeight: '500px' } )
+						}
+						__nextHasNoMarginBottom
+					>
+						<ToggleGroupControl
+							__next40pxDefaultSize
+							__nextHasNoMarginBottom
+							isBlock
+							onChange={ ( v ) => {
+								setIsAnimation( v );
 							} }
+							value={ isAnimation }
 						>
-							Front
-						</Button>
-						<Button
-							className={
-								isAnimation === 'back'
-									? 'is-primary'
-									: 'is-default'
-							}
-							onClick={ () => {
-								setIsAnimation( 'back' );
+							<ToggleGroupControlOption
+								label="Front"
+								value="front"
+							/>
+							<ToggleGroupControlOption
+								label="Back"
+								value="back"
+							/>
+						</ToggleGroupControl>
+						<hr />
+						<HeightControl
+							label={ __( 'Height', 'flip-box-block' ) }
+							value={ flipboxHeight }
+							onChange={ ( value ) => {
+								setAttributes( { flipboxHeight: value } );
 							} }
-						>
-							Back
-						</Button>
-					</ButtonGroup>
-					<UnitControl
-						label={ __( 'Height', 'flip-box-block' ) }
-						labelPosition="edge"
-						value={ flipboxHeight }
-						__unstableInputWidth="80px"
-						onChange={ ( value ) => {
-							setAttributes( { flipboxHeight: value } );
-						} }
-					/>
-				</PanelBody>
+						/>
+					</ToolsPanelItem>
+				</ToolsPanel>
 			</InspectorControls>
 			<style>{ editorInlineStyle }</style>
 			<div { ...blockProps }>
@@ -157,6 +177,6 @@ export default function flipboxEdit( props ) {
 					/>
 				</div>
 			</div>
-		</div>
+		</>
 	);
 }
