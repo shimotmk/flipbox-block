@@ -2,9 +2,9 @@
 Contributors: shimotomoki
 Donate link: https://www.amazon.jp/hz/wishlist/ls/2N2XNHHUW2GXP?ref_=wl_share
 Tags: gutenberg,block,FlipBox,
-Requires at least: 6.7
-Tested up to: 6.8
-Stable tag: 0.6.0
+Requires at least: 6.8
+Tested up to: 6.9
+Stable tag: 0.7.0
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -24,6 +24,10 @@ https://www.youtube.com/watch?v=4tb2vQKirt0
 == Frequently Asked Questions ==
 
 == Changelog ==
+
+= 0.7.0 =
+* Tested up version
+* Three new patterns added.
 
 = 0.6.0 =
 * Tested up version

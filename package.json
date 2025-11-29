@@ -1,6 +1,6 @@
 {
 	"name": "flipbox-block",
-	"version": "0.5.0",
+	"version": "0.7.0",
 	"author": "Tomoki Shimomura",
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
